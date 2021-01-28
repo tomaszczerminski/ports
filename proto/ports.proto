@@ -1,0 +1,26 @@
+syntax = "proto3";
+option go_package = "pkg/shared";
+
+package shared;
+
+message PortBlueprint {
+  string id = 1;
+  string name = 2;
+  repeated string alias = 3;
+  string city = 4;
+  string code = 5;
+  repeated double coordinates = 6;
+  string country = 7;
+  string province = 8;
+  repeated string regions = 9;
+  string timezone = 10;
+  repeated string unlocs = 11;
+}
+
+message Summary {
+  uint64 submitted = 1;
+}
+
+service Streamer {
+  rpc Send (stream PortBlueprint) returns (Summary) {}
+}

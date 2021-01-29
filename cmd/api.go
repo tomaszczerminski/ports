@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"github.com/alexsasharegan/dotenv"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -41,7 +42,7 @@ func main() {
 	blueprints := startup.FetchPortBlueprints(ctx, os.Getenv("PORTS_PATH"))
 	startup.Forward(ctx, blueprints, streamer)
 	r := api.Router()
-	if err := http.ListenAndServe(":8080", r); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("API_PORT")), r); err != nil {
 		logger.Fatal().Err(err).Msg("cannot start HTTP server")
 	}
 }

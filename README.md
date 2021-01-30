@@ -1,5 +1,5 @@
 # Remarks
-I do know this specific domain and had not means of communication so that I would learn it more.  
+I do not know this specific domain and had not means of communication so that I would learn it more.  
 That's the reason domain is inaccurate and aggregate may be improper.
 
 I did not know a port schema beforehand, the only thing I got is ports.json file,   

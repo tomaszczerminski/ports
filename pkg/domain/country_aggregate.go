@@ -7,7 +7,7 @@ import (
 
 // Country is an aggregate root so the only way
 // to interact with all entities within the aggregate is through it
-// Aggregate should always be concise, but I do not know the business rules
+// Aggregate should always be consistent, but I do not know the business rules
 // so I just leave it without any (as it the only way for all the data to be processed)
 type Country struct {
 	sync.Mutex
